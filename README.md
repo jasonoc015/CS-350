@@ -1,6 +1,6 @@
 # Summary
 The concept of the project was to build a prototype thermostat controller on the TI board. 
-What I did well
+# What I did well
 I successfully completed the project as defined by the requirements. The thermostat performs as desired. The project lab guide provides driver interfaces for UART, but TI has removed the UART driver in favor of the UART2 driver. I found a porting guide online that showcases how to convert UART usages to UART2. The porting guide was helpful, but I still needed to reference the driver header file to fix the incompatible UART driver interface. There was also an issue with the provided I2C driver interface that required me to analyze the I2C driver to fix the broken I2C code.
 # Where I could improve
 The project is inefficient as it creates an unnecessary time-interval based button check function that checks for interrupt flags. The program could be more efficient by directly updating the setpoint via button interrupt callback functions. This enhancement would remove the need for unnecessary logic being run periodically. This would also increase the timer period from 100ms to 500ms. I was told these changes were not the point of the assignment, but they are optimizations that could have been done.
